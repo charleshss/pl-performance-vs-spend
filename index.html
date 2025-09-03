@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Premier League Financial Performance</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h2>Premier League Spend vs Points</h2>
+    <div class="season-selector">
+        <label for="start-season">From:</label>
+        <select id="start-season"></select>
+        <label for="end-season">To:</label>
+        <select id="end-season"></select>
+        <button id="update-btn">Update</button>
+    </div>
+
+    <div class="container">
+        <div class="visualisation-wrapper">
+            <div id="visualisation" style="position: relative;">
+                <div class="loading" id="loading">Loading data...</div>
+                <svg height="600" width="1000"></svg>
+            </div>
+            <div id="chart-description" class="chart-description" width="1000">
+                <h3>Understanding the Visualisation</h3>
+                <p>This scatter plot visualises the relationship between Premier League teams' financial investment
+                    (total transfer spending) and their performance (points gained) over the selected seasons.</p>
+
+                <h4>Interactions Available</h4>
+                <ul>
+                    <li><strong>Season selection:</strong> Choose the range of seasons you wish to view data over</li>
+                    <li><strong>Zoom/Pan:</strong> Use mouse wheel to zoom in/out, click and drag to pan across the
+                        chart</li>
+                    <li><strong>Team details:</strong> Click on any team point to view a detailed stats panel which
+                        showcases their performance over the selected time frame</li>
+                    <li><strong>Reset view:</strong> Click "Reset Zoom" in the top-right corner to return to the default
+                        view</li>
+                </ul>
+
+                <h4>What to Look For</h4>
+                <p>Examine whether teams with higher spending tend to accumulate more points. Notice which teams achieve
+                    strong performance with relatively modest spending, and which teams might be spending heavily
+                    without proportional success.</p>
+
+                <p>The visualisation helps answer questions such as:</p>
+                <ul>
+                    <li>What is the relationship between financial investment and Premier League performance, and which
+                        clubs demonstrate the best and worst returns on investment over time?</li>
+                    <li>Which teams are most efficient at converting spending into points?</li>
+                    <li>Which teams have outperformed or underperformed relative to their spending?</li>
+                </ul>
+
+                <h4>Limitations</h4>
+                <p>This visualisation is reliant on the accuracy of the transfer record dataset. If there are errors
+                    within this or undocumented transfer then it would impact the over all stats of a club.</p>
+
+            </div>
+        </div>
+        <div class="details-panel" id="detailsPanel">
+            <div class="details-content">
+                <div class="details-header">
+                    <h2 class="team-name" id="teamName"></h2>
+                    <button class="close-btn" id="closePanel">×</button>
+                </div>
+                <div class="team-stats" id="teamStats"></div>
+                <div class="doughnut-chart" id="doughnutChart"></div>
+                <div class="transfers-section">
+                    <h3>Key Transfers</h3>
+                    <table class="transfers-table" id="transfersTable">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Player</th>
+                                <th>Fee</th>
+                                <th>Club</th>
+                            </tr>
+                        </thead>
+                        <tbody id="transfersTableBody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/utils.js"></script>
+    <script src="js/data-handler.js"></script>
+    <script src="js/team-details.js"></script>
+    <script src="js/visualisation.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>
