@@ -28,10 +28,6 @@ The project is organised into the following components:
 
 - `report.pdf`: Contains my report on parts 1 and 2 and contains an appendix for further supporting information.
 
-### Video
-
-- `demo.mp4`: A quick tour of the application and how to use it.
-
 ## How to Use
 
 1. Please open the `index.html` file to load the visualisation
