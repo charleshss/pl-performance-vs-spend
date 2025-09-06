@@ -2,6 +2,10 @@
 
 This interactive data visualisation uses a scatter plot to visualise the relationship between Premier League teams' financial investment (total transfer spending) and their performance (points gained) over the selected seasons.
 
+## 🌐 Live Demo
+
+Check out the visualisation: [**charleshss.github.io/pl-performance-vs-spend**](https://charleshss.github.io/pl-performance-vs-spend/)
+
 ## Project Structure
 
 The project is organised into the following components:
